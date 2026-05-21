@@ -1,0 +1,27 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<div class="hero">
+    <h1>Michael Teller</h1>
+    <p>Full Stack Development Manager with 7+ years of experience building enterprise SaaS platforms. Currently leading a team delivering software to 250+ nonprofit clients.</p>
+    <a href="/portfolio" class="btn">View My Work</a>
+</div>
+
+<section style="padding: 3rem 0;">
+    <h2>What I Do</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+        <div style="background: white; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h3 style="margin-bottom: 0.5rem;">Full Stack Development</h3>
+            <p>PHP, JavaScript, Python, and modern frameworks. Building scalable applications from database to UI.</p>
+        </div>
+        <div style="background: white; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h3 style="margin-bottom: 0.5rem;">Team Leadership</h3>
+            <p>Managing development teams, mentoring engineers, and bridging technical and business needs.</p>
+        </div>
+        <div style="background: white; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h3 style="margin-bottom: 0.5rem;">Infrastructure</h3>
+            <p>Distributed Linux systems, Docker, CI/CD pipelines, and maintaining 99.99% uptime.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

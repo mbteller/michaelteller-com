@@ -1,0 +1,43 @@
+# Environment files
+.env
+*.env.local
+
+# Dependencies
+vendor/
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/*
+!logs/.gitkeep
+
+# Data files (contain sensitive info)
+public_html/mibritetech.com/data/*
+!public_html/mibritetech.com/data/.gitkeep
+
+# WordPress uploads (too large for git)
+public_html/wp-content/uploads/
+public_html/northaustinliving.com/wp-content/uploads/
+
+# Database dumps
+*.sql
+
+# Deploy backups
+*.bak
+
+# Cache
+cache/
+*.cache
+
+# Docker volumes
+db_data/

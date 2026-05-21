@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  web:
+    image: php:8.2-apache
+    container_name: godaddy_web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public_html:/var/www/html
+      - ./docker/apache/vhosts.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/custom.ini
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    depends_on:
+      - db
+    networks:
+      - godaddy_net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: >
+      bash -c "
+        docker-php-ext-install mysqli pdo pdo_mysql &&
+        a2enmod rewrite &&
+        apache2-foreground
+      "
+
+  db:
+    image: mysql:8.0
+    container_name: godaddy_db
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-localdev}
+      MYSQL_DATABASE: i2369960_wp1
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./i2369960_wp1.sql:/docker-entrypoint-initdb.d/01-wp1.sql
+      - ./i2369960_wp2.sql:/docker-entrypoint-initdb.d/02-wp2.sql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/00-init.sql
+    networks:
+      - godaddy_net
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: godaddy_pma
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: ${MYSQL_ROOT_PASSWORD:-localdev}
+    depends_on:
+      - db
+    networks:
+      - godaddy_net
+
+volumes:
+  db_data:
+
+networks:
+  godaddy_net:
+    driver: bridge

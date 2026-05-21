@@ -1,0 +1,34 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<h1>Portfolio</h1>
+<p>Selected projects and accomplishments from my career.</p>
+
+<div style="display: grid; gap: 2rem; margin-top: 2rem;">
+    <article style="background: white; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <h2>Enterprise SSO Integration</h2>
+        <p>Built unified authentication system supporting Active Directory, Microsoft Entra, and Okta for 6-10 enterprise clients covering 5M+ users.</p>
+        <p><strong>Impact:</strong> Reduced client SSO costs by $10K+ annually per organization.</p>
+        <p style="color: #6b7280; font-size: 0.875rem;">Technologies: PHP, SAML, OAuth 2.0, Active Directory, Okta</p>
+    </article>
+
+    <article style="background: white; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <h2>Disaster Lodging Management System</h2>
+        <p>Designed and developed system tracking 50-5,000+ responders per disaster event across 20-50 concurrent disasters. Real-time lodging availability, vendor communication, and integration with existing user systems.</p>
+        <p><strong>Impact:</strong> Streamlined disaster response logistics for major national nonprofit organizations.</p>
+        <p style="color: #6b7280; font-size: 0.875rem;">Technologies: PHP, MySQL, REST APIs, Real-time Updates</p>
+    </article>
+
+    <article style="background: white; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <h2>Payment Processing Integration</h2>
+        <p>Stripe reporting integration used by 150+ nonprofit clients, with enhanced analytics supporting 1.5M+ users for organization dues and store management.</p>
+        <p style="color: #6b7280; font-size: 0.875rem;">Technologies: PHP, Stripe API, MySQL, Reporting Dashboards</p>
+    </article>
+
+    <article style="background: white; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <h2>AI-Assisted Development Tools</h2>
+        <p>Implemented AI code review system and integrated agentic AI coding tools into team workflow for accelerated development.</p>
+        <p style="color: #6b7280; font-size: 0.875rem;">Technologies: Claude Code, AI/LLM Integration, Code Review Automation</p>
+    </article>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<h1>About Me</h1>
+<p>Development Manager and Senior Full Stack Developer based in Austin, Texas.</p>
+
+<section style="margin-top: 2rem;">
+    <h2>Background</h2>
+    <p>I currently lead a team of 8 developers building volunteer management software for nonprofit organizations, including some of the largest disaster response organizations in the United States.</p>
+    <p>Our platform serves 250+ clients and 5M+ users across distributed Linux infrastructure.</p>
+</section>
+
+<section style="margin-top: 2rem;">
+    <h2>Technical Skills</h2>
+    <ul style="list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        {% for skill in ['PHP', 'JavaScript', 'Python', 'MySQL', 'PostgreSQL', 'Docker', 'Linux', 'Apache', 'Nginx', 'Git', 'CI/CD', 'REST APIs', 'Django', 'Node.js'] %}
+        <li style="background: white; padding: 0.5rem 1rem; border-radius: 2rem; border: 1px solid #e5e7eb;">{{ skill }}</li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section style="margin-top: 2rem;">
+    <h2>Education</h2>
+    <p><strong>MBA</strong> - Keller Graduate School of Management</p>
+    <p><strong>BS in Business</strong> - University of Texas at Arlington</p>
+</section>
+{% endblock %}
